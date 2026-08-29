@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Brand Name - Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #111111;
+            --accent-color: #0066cc;
+            --text-color: #333333;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --gray: #777777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 65px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--bg-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Brand Information Section */
+        .brand-info {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .brand-info .section-title {
+            color: var(--white);
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .brand-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .brand-item p {
+            color: #bbbbbb;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #888888;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none; /* Simplification for mobile view */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">BRANDNAME</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#brand">Our Ethos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Crafted for Quality & Purpose</h1>
+            <p>Discover our story, explore our signature offerings, and understand what drives our vision forward.</p>
+            <a href="#products" class="btn">Explore Showcase</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Rooted in Passion and Innovation</h3>
+                    <p>Founded with a distinct vision to reshape standard expectations, our brand focuses on clean aesthetics, exceptional craftsmanship, and absolute transparency.</p>
+                    <p>We believe that every item we showcase tells a unique story of design dedication, bringing authentic quality directly to those who appreciate fine details.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team working together">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-info">
+                    <h4>Signature Piece Alpha</h4>
+                    <p>Designed with minimalism in mind, combining daily utility with enduring structural elegance.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-info">
+                    <h4>Concept Edition Beta</h4>
+                    <p>Engineered to deliver high performance while maintaining a sleek, understated form factor.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-info">
+                    <h4>Essential Line Gamma</h4>
+                    <p>An everyday favorite tailored precisely to meet structural integrity and modern utility needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="brand" class="brand-info">
+        <div class="container">
+            <h2 class="section-title">Brand Information & Values</h2>
+            <div class="brand-grid">
+                <div class="brand-item">
+                    <h4>Sustainable Design</h4>
+                    <p>We source materials mindfully, aiming to lower environmental impact at every step of development.</p>
+                </div>
+                <div class="brand-item">
+                    <h4>Uncompromising Quality</h4>
+                    <p>Every single detail goes through strict evaluation to match our long-term reliability standards.</p>
+                </div>
+                <div class="brand-
